@@ -7,7 +7,20 @@ option = int(input("Opción: "))
 
 if option == 1:
     decimal = int(input("Ingrese un número decimal: "))
+    
+    if decimal < 0:
+        print("El numero debe ser positivo")
+
+    if decimal == 0:
+        print("0")
+
+
+    # Acumulador de caracteres binarios
     binario = ""
+
+    # FORMULA para ir de decimal a binario
+    # Vamos dividiendo el valor por 2, usamos modulo para eso. Así obtenemos el resto
+
 
     # Recorremos el número decimal
     while decimal > 0:
@@ -23,6 +36,12 @@ if option == 1:
 
 elif option == 2:   
     binario = input("Ingrese un número binario: ")
+
+    # Validacion
+    if not all( c in "01" for c in binario):
+        print("Número binario no válido")
+
+
     decimal = 0
 
     # Formula ejemplo: digito * 2^3 + digito * 2^2 + digito * 2^1 + digito * 2^0 
